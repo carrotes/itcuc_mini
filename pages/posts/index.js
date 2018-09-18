@@ -129,7 +129,6 @@ Page({
                 }
                 var old = that.data.list;
                 var newList = old.concat(list);
-                console.log(newList)
                 that.setData({
                     list: newList,
                     page: page,
