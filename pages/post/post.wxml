@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<import src="../../templates/itcuc.wxml"/>
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">{{title}}</view>
+        <view class="page__desc">{{author}}</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-panel">
+            <view class='panel__hd'>
+            </view>
+            <view class='panel__bd'>
+                <view class="weui-panel__bd">
+                    <view class="itcuc-content">
+                        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="weui-panel" wx:if="{{replies.length > 0}}">
+            <view class="weui-panel__hd">最新回复</view>
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_text" wx:for="{{replies}}">
+                    <view class="weui-media-box__title weui-media-box__title_in-text">{{item.author_name}}</view>
+                    <view class="weui-media-box__desc">{{item.text}}</view>
+                    <view class="weui-media-box__info">
+                        <view class="weui-media-box__info__meta">{{item.date}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <form bindsubmit='reply'>
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea name="reply" class="weui-textarea" placeholder="请输入回复内容" style="height: 3.3em" />
+                    <view class="weui-textarea-counter">0/200</view>
+                </view>
+            </view>
+        </view>
+        <view class="weui-btn-area">
+            <button form-type='submit' class="weui-btn" plain="true" type="primary">快速回复</button>
+        </view>
+        </form>
+        <!--<template is="float-button"></template>-->
+    </view>
+</view>

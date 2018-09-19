@@ -23,7 +23,7 @@
             </view>
             <view class="weui-panel weui-panel_access">
                 <block wx:for="{{list}}">
-                    <navigator url="{{'/pages/post/index?id=' + item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <navigator url="{{'/pages/post/post?id=' + item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
                         <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
                             <image class="weui-media-box__thumb" src="{{item.img}}"></image>
                         </view>

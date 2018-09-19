@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/posts/index",
-    "pages/post/index",
+    "pages/posts/posts",
+    "pages/post/post",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -14,19 +14,22 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/posts/index",
-        "text": "首页",
-        "iconPath": "images/icon_nav_dialog.png"
+        "pagePath": "pages/posts/posts",
+        "text": "文章",
+        "iconPath": "images/_doc.png",
+        "selectedIconPath": "images/doc.png"
       },
       {
         "pagePath": "pages/index/index",
-        "text": "日程",
-        "iconPath": "images/icon_nav_button.png"
+        "text": "新建",
+        "iconPath": "images/_add.png",
+        "selectedIconPath": "images/add.png"
       },
       {
         "pagePath": "pages/logs/logs",
         "text": "我的",
-        "iconPath": "images/icon_nav_cell.png"
+        "iconPath": "images/_user.png",
+        "selectedIconPath": "images/user.png"
       }
     ]
   }

@@ -1,0 +1,16 @@
+.itcuc-content {
+    margin: 12px;
+    background-color: #FFF;
+}
+
+.itcuc-input-bottom {
+    bottom: 0;
+    background-color: #FFFFFF;
+    /*position: fixed;*/
+}
+
+.itcuc-button-add {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

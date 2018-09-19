@@ -1,4 +1,5 @@
 @import 'style/weui.wxss';
+@import 'style/itcuc.wxss';
 @import 'wxParse/wxParse.wxss';
 
 page{

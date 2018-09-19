@@ -1,0 +1,5 @@
+<template name="float-button">
+    <view style="bottom: 30rpx;right: 50rpx;position: fixed;">
+        <image src="/images/comment.png" mode="scaleToFill" style="width:200rpx;height: 200rpx"></image>
+    </view>
+</template>
