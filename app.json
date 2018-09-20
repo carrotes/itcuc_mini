@@ -1,8 +1,8 @@
 {
   "pages":[
+    "pages/user/user",
     "pages/posts/posts",
     "pages/post/post",
-    "pages/index/index",
     "pages/logs/logs"
   ],
   "window":{
@@ -20,13 +20,13 @@
         "selectedIconPath": "images/doc.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/posts/posts",
         "text": "新建",
         "iconPath": "images/_add.png",
         "selectedIconPath": "images/add.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/user/user",
         "text": "我的",
         "iconPath": "images/_user.png",
         "selectedIconPath": "images/user.png"

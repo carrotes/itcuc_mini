@@ -1,0 +1,15 @@
+<view class="page">
+    <view class="page__hd"></view>
+    <view class="page__bd">
+        <view class="userinfo">
+            <button wx:if="{{!hasUserInfo && canIUse}}" type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权登录 </button>
+            <block wx:else>
+                <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            </block>
+        </view>
+        <view class="usermotto">
+            <text class="user-motto"></text>
+        </view>
+    </view>
+</view>
