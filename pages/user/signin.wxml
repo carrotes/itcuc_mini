@@ -1,0 +1,24 @@
+
+    <template name='signin'>
+        <form bindsubmit='signin'>
+        <view class="weui-cells__title">登录名</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入登录名" />
+                </view>
+            </view>
+        </view>
+    
+        <view class="weui-cells__title">密码</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" type='password' placeholder="请输入密码" />
+                </view>
+            </view>
+        </view>
+        <button class="weui-btn" type="default" bindtap='toSignup'>没有账号 注册</button>
+        <button class="weui-btn" type="primary" form-type='submit'>登陆</button>
+        </form>
+    </template>

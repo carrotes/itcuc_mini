@@ -1,48 +1,51 @@
 const app = getApp();
+var Config = require('../../config.js')
+
 Page({
     data:{
         userInfo: {},
-        hasUserInfo: false,
-        canIUse: wx.canIUse('button.open-type.getUserInfo')
+        logined:false,
+        currentPage:'signin',
+        itcucname:'wxminifheuqo23(@#hu@$#hj',
+        itcucps:'IB998f7n8$pa6I8*Vph%4s&W'
     },
     onLoad: function () {
-        if (app.globalData.userInfo) {
-            this.setData({
-                userInfo: app.globalData.userInfo,
-                hasUserInfo: true
-            })
-        } else if (this.data.canIUse){
-            // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-            // 所以此处加入 callback 以防止这种情况
-            app.userInfoReadyCallback = res => {
-                this.setData({
-                    userInfo: res.userInfo,
-                    hasUserInfo: true
-                })
-            }
+        var token = wx.getStorageSync("token");
+        if(token) {
+            this.setData({logined:true,currentPage:''})
         } else {
-            // 在没有 open-type=getUserInfo 版本的兼容处理
-            wx.getUserInfo({
-                success: res => {
-                    app.globalData.userInfo = res.userInfo
-                    this.setData({
-                        userInfo: res.userInfo,
-                        hasUserInfo: true
-                    })
-                }
-            })
+            this.setData({ logined: false, currentPage: 'signin'})
         }
     },
-    getUserInfo: function(e) {
-        console.log(e)
-        app.globalData.userInfo = e.detail.userInfo
+    signin:function(){
+        
+    },
+    signup:function(){
+        var at;
+        var that = this;
+        var param = {username:this.data.itcucname,password:this.data.itcucps};
+        var jsonParam = JSON.stringify(param);
+        console.log(jsonParam)
+        wx.request({
+            url: Config.remote.token,
+            method: 'POST',
+            data:jsonParam,
+            success: (res) => {
+                at = res.data.token;
+                if(at) {
+                    console.log(at);
+                }
+            }
+        })
+    },
+    toSignin:function() {
         this.setData({
-            userInfo: e.detail.userInfo,
-            hasUserInfo: true
+            currentPage:'signin'
+        })
+    },
+    toSignup:function() {
+        this.setData({
+            currentPage: 'signup'
         })
     }
 })
-
-1.0%
-    2%
-    2.2%
