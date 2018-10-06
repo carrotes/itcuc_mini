@@ -1,5 +1,6 @@
 const app = getApp();
 var Config = require('../../config.js')
+var util = require('../../utils/util.js');
 
 Page({
     data:{
@@ -20,23 +21,18 @@ Page({
     signin:function(){
         
     },
-    signup:function(){
-        var at;
+    signup:function(e){
+        var Base64 = util.Base64;
         var that = this;
-        var param = {username:this.data.itcucname,password:this.data.itcucps};
-        var jsonParam = JSON.stringify(param);
-        console.log(jsonParam)
+        var token = this.data.itcucname+":"+this.data.itcucps;
+        console.log(Base64.encode(token));
         wx.request({
-            url: Config.remote.token,
-            method: 'POST',
-            data:jsonParam,
-            success: (res) => {
-                at = res.data.token;
-                if(at) {
-                    console.log(at);
-                }
-            }
-        })
+          url: Config.remote.users,
+          header:'',
+        })        
+        var newUser = e.detail.value.uname;
+        var newPass = e.detail.value.upwd;
+        var newEmail = e.detail.value.uemail;
     },
     toSignin:function() {
         this.setData({
